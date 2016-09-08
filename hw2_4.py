@@ -30,6 +30,7 @@ def main():
 	print "\n"
 
 
+
 #Takes in an abstract value vector and returns it's two's complement
 #Inputs:
 #	avv_convert - abstract value vector of arbitrary length
@@ -58,12 +59,14 @@ def convert_twos_complement(avv_convert):
 		elif(overflow == 1 and avv_convert[i] == 'T'):
 			overflow =  -1;
 	return avv_convert
-					
+
 
 
 #Abstract transfer function for unsigned addition
 #This function assumes that the four bits are unsigned, and thus calculates two's complement by
 #calculating the fifth sign bit. Though it does not return that bit in the result.
+#This function takes in 4 bit abstract value vectors, and returns one as a result. Each AVV contains
+#a number of abstract value bits, which can be '0', '1', or "unknown", which I represent with a 'T'.
 #Inputs:
 #	4bavv_minuend - 4 bit abstract value vector representing the left-hand side of the subtraction
 #	4bavv_subtrahend -  4 bit abstract value vector representing the right-hand side of the subtraction
@@ -76,6 +79,7 @@ def unsignedsub_4bit(avv_minuend, avv_subtrahend):
 
 	#Convert the subtrahend so that we can compare via simple addition
 	bavv_subtrahend = convert_twos_complement(bavv_subtrahend);
+	print bavv_subtrahend
 
 	#Create a transfer function matrix
 	#matrix[ovf][min][sub]
@@ -110,8 +114,8 @@ def unsignedsub_4bit(avv_minuend, avv_subtrahend):
 		[ Avvmm_dict[bavv_minuend[1]] ] \
 		[ Avvmm_dict[bavv_subtrahend[1]] ];
 	overflow = tfm_ovfmatrix[ Avvmm_dict[overflow] ] \
-		[ Avvmm_dict[bavv_minuend[0]] ] \
-		[ Avvmm_dict[bavv_subtrahend[0]] ];
+		[ Avvmm_dict[bavv_minuend[1]] ] \
+		[ Avvmm_dict[bavv_subtrahend[1]] ];
 
 	#Calculate Third bit
 	avv_result[2] = tfm_matrix[ Avvmm_dict[overflow] ] \
