@@ -8,6 +8,12 @@ def main():
 	
 	print "Testing With AVVs 1111 and 1111"
 	print unsignedsub_4bit(['1','1','1','1'],['1','1','1','1'])
+	print "Testing With AVVs 0000 and 0000"
+	print unsignedsub_4bit(['0','0','0','0'],['0','0','0','0'])
+	print "\n"
+	
+	print "Testing With AVVs 1111 and 1111"
+	print unsignedsub_4bit(['1','1','1','1'],['1','1','1','1'])
 	print "\n"
 
 	print "Testing With AVVs 0101 and 1010"
