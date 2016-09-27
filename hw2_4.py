@@ -2,8 +2,9 @@
 def main():
 	#Keep in mind, python flips the bit's index
 	#add some stuff
-	print "Hello"
-	print "Another print"
+	print "asdsaddasdsa"
+	asd = 3 + 4;
+	print "asddsasaddsa print"
 	print "Testing With AVVs 0000 and 0000"
 	print unsignedsub_4bit(['0','0','0','0'],['0','0','0','0'])
 	print "\n"
