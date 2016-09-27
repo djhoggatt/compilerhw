@@ -1,7 +1,9 @@
 #Main function used to test
 def main():
 	#Keep in mind, python flips the bit's index
-	print "Goodbye"
+	#add some stuff
+	print "Hello"
+	print "Another print"
 	print "Testing With AVVs 0000 and 0000"
 	print unsignedsub_4bit(['0','0','0','0'],['0','0','0','0'])
 	print "\n"
